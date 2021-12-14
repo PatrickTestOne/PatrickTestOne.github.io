@@ -1,0 +1,470 @@
+// ================ SACTION IMPORT 
+@import "_Normalazy.scss";
+//fonts
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+   
+
+// ================= SECTION MIXINS
+// font
+$Font-Mer: Merriweather; 
+   
+$Font-Mont: Montserrat;
+
+$FontReleway: Raleway;
+
+// color 
+$sky-blue: #79eae2;
+
+%FontTitle {
+   font: bold 38px  Montserrat;
+   text-align: center;
+   margin: 135px  0 0 0;
+}
+%FontSubTitle {
+   font: 400 17px  Merriweather;
+   color: #848585;
+   text-align: center;
+   margin: 10px 0 135px 0;
+}
+
+//===================  MAIN TAGS 
+html {
+   overflow-x: hidden;
+   body {
+      display: flex;
+      flex-direction: column;
+      header {
+         height: 100vh;
+      }
+   }
+}
+.body {
+   width: 100vw;
+      
+   
+}
+.wrapper {
+   width: 1140px;
+   height: 100%;
+   margin: 0 auto;
+   
+   
+}
+
+//=================== SECTION HEADER
+// section navigastion
+.section-header-wrapper {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+}
+
+.section-header-navigation {
+   flex-grow: 1;
+
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   position: relative;
+   width: 100%;
+   
+   &_logo {
+      display: inline-block;
+      font: 900 17px $Font-Mont;
+      text-transform: uppercase;
+      border: 5px solid black;
+      padding: 3px 7px 4px;
+      
+         span {
+            color: $sky-blue;
+            font-size: 24px;
+         }
+   }
+   &_nav {
+      width: 40px;
+      height: 40px;
+      border: 2px solid black;
+   }
+   &_menu {
+      display: none;
+      position: absolute;
+      left: 15%;
+      
+      width: 800px;
+      height: 1500px;
+      background: rgba($color: #000000, $alpha: .7);
+      z-index: 10;
+      box-sizing: border-box;
+   }
+}
+//section header title
+.section-header-title {
+   width: 980px;
+   flex-grow: 1;
+   h1 {
+      text-transform: uppercase;
+      font: bold 45px  $Font-Mont;
+      text-align: center;
+      color: #505050;
+      text-shadow: 8px 8px 8px #b2b2b2;
+      span {
+         box-sizing: border-box;
+         background-color: $sky-blue;
+         padding: 0 7px;
+      }
+   }
+}
+// section header button 
+.section-header-button {
+   flex-grow: 1;   
+
+   & a {
+   display: inline-block;
+   width: 230px;
+   height: 55px;
+   font: 400 18px  $Font-Mont;
+   text-transform: uppercase;
+   border: 3px solid #777879;
+   color: #777879;
+   border-radius: 3px;
+   text-align: center;
+   line-height: 50px;
+   text-decoration: none;
+}
+}
+//=========================== SECTION MAIN 
+// main content title 
+.content-title {
+
+   &-wrap {
+
+      h2 {
+         @extend %FontTitle;
+         text-transform: uppercase;
+      }
+      h3 {
+         @extend %FontSubTitle;
+         text-transform: uppercase;
+      }
+   }
+}
+
+// section about 
+
+.section-about {
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+
+   &-content {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      
+      &_slider {
+         flex-grow: 1;
+         flex-basis: 0;
+         display: flex;
+         flex-direction: column;
+         
+         &-img {
+            
+            width: 485px;
+            height: 485px;
+            position: relative;
+            &-back {
+               width: 485px;
+               height: 380px;
+               background: #ecedef;
+               position: absolute;
+               top: 10%;
+               right: 0;
+            }
+            &-foregr {
+               width: 400px;
+               height: 485px;
+               background: url("../img/Rectangle.png") center/cover no-repeat;
+               position: absolute;
+               top: 0;
+               right: 10%;
+            }
+         }
+         &-swith {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            width: 100%;
+            a {
+               display: inline-block;
+               border-radius: 50%;
+               background: #d0d0d0;
+               width: 10px;
+               height: 10px;
+               margin: 0 2px;
+               
+               &:hover {
+                  background-color: $sky-blue ;
+               }
+            }
+            
+         }
+      }
+      &_text {
+         flex-grow: 1;
+         flex-basis: 0;
+
+         h4 { 
+            text-transform: uppercase;
+            font: bold 20px $Font-Mer;
+            padding-left: 70px;
+            padding-top: 20px;
+
+
+         }
+         h5 {
+            text-transform: uppercase;
+            font: bold 17px $Font-Mer;
+            padding-left: 70px;
+            padding-top: 60px;
+         }
+         p {
+            font: 400 16px $FontReleway ;
+            padding-left: 70px;
+            padding-top: 30px;
+            padding-right: 30px;
+         }
+      }
+   }
+}
+// section works 
+
+.section-works-content {
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-content: space-between;
+      height: 730px;
+      width: 1140px;
+
+      &_box {
+         display: inline-block;
+         width: 370px;
+         height: 360px;
+      }
+         .ONE {
+            background: url("../img/works/works1.png") center/cover no-repeat;
+         }
+         .TWOO {
+            background: url("../img/works/works2.png") center/cover no-repeat;
+         }
+         .THREE {
+            background: url("../img/works/works3.png") center/cover no-repeat;
+         }
+         .FOUR {
+            background: url("../img/works/works4.png") center/cover no-repeat;
+         }
+         .FIVE {
+            background: url("../img/works/works5.png") center/cover no-repeat;
+         }
+         .SIX {
+            background: url("../img/works/works6.png") center/cover no-repeat;
+         }
+      }
+// section team 
+
+.section-team-content {
+
+   height: 900px;
+   width: 100%;
+
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-content: space-between;
+   position: relative;
+
+   &-box {
+      width: 370px;
+      height: 440px;
+   }
+
+   .f-one {
+      background: url("../img/team/team1.png") center/cover no-repeat;
+   }
+   .f-twoo {
+      background: url("../img/team/team5.png") center/cover no-repeat;
+   }
+   .f-three {
+      background: url("../img/team/team4.png") center/cover no-repeat;
+   }
+   .f-four {
+      background: url("../img/team/team3.png") center/cover no-repeat;
+   }
+   .f-five {
+      background: url("../img/team/team2.png") center/cover no-repeat;
+   }
+   .f-six {
+      background: url("../img/team/team1.png") center/cover no-repeat;
+   }
+
+}
+//===================== SECTION FOOTER
+.footer {
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   margin-top: 10%;
+
+   &-content {
+      width: 100%;
+      flex-grow: 2;
+      background: url("../img/footer-back.png") center/cover no-repeat;
+      position: relative;
+      z-index: 1;
+      &::after {
+         content: "";
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         z-index: 2;
+         background: rgba($color: #fff, $alpha: .7);
+      }
+      
+
+      &-form {
+         height: 65%;
+         width: 50%;
+         background:  #425460;
+         opacity: 0.8;
+         z-index: 5;
+         padding: 3%;
+
+      }
+ // contancts
+      &-contacts {
+         height: 65%;
+         width: 45%;
+         background: #425460;
+         opacity: 0.8;
+         z-index: 5;
+
+         display: flex;
+         flex-direction: column;
+
+         &_connect {
+            width: 100%;
+            flex: 1;
+
+            display: flex;
+            flex-direction: column;
+         
+           
+         }
+
+         &_map {
+            width: 100%;
+            flex: 1;
+            box-sizing: border-box;
+         
+            iframe {
+               width: 90%;
+               height: 90%;
+               border: none;
+               margin: 0 5%;
+            }
+         
+         }
+      }
+   }
+   &-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 1140px;
+      height: 100%;
+      margin: 0 auto;
+      position: relative;
+   }
+   &-bottom {
+      width: 100%;
+      flex-grow: 1;
+      background: #262b2e;
+   }
+}
+   
+.contact-wrap {
+   
+   opacity: 0.7;
+   flex: 1;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+   padding-top: 10%;
+p {
+   //margin-top: 10%;
+   margin-left: 10%;
+   color: #fff;
+   font: 400 15px/1.5 $FontReleway;
+}
+}
+//===================FORM
+
+.form {
+   display: flex;
+   flex-direction: column;
+   opacity: 0.7;
+   
+   input {
+      background: rgba(0, 0, 0, 0);
+      color: #fff;
+      border: none;
+      border-bottom: 2px solid #fff;
+      height: 60px;
+      font: 400 15px/1.5 $FontReleway;
+      &::placeholder {
+         color: #fff;
+         font: 400 15px/1.5 $FontReleway;
+      }
+   }
+   textarea {
+      margin-top: 10%;
+      background: rgba(0, 0, 0, 0);
+      color: #fff;
+      border: none;
+      border-bottom: 2px solid #fff;
+      font: 400 15px/1.5 $FontReleway;
+
+      &::placeholder {
+         display: inline-block;
+         
+         color: #fff;
+         font: 400 15px/1.5 $FontReleway;
+      }
+   }
+}
+.btn {
+   margin-top: 5%;
+   width: 250px;
+   height: 55px;
+   color: black;
+   font: 400 18px $Font-Mont;
+   background-color: #6eeee4;
+   border: none;
+
+   &:hover {
+      box-shadow: 0 0 10px black inset;
+      cursor: pointer;
+   }
+}
